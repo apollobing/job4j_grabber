@@ -77,9 +77,6 @@ public class HabrCareerParse implements Parse {
                 throw new RuntimeException(e);
             }
         }
-        for (Post p : postList) {
-            System.out.println(p);
-        }
         return postList;
     }
 }
