@@ -19,7 +19,7 @@ class HabrCareerDateTimeParserTest {
     @Test
     void whenStringContainsIncorrectTemplateOfDateTimeThenExpectedIsNotEqualsToResult() {
         HabrCareerDateTimeParser parser = new HabrCareerDateTimeParser();
-        String dateTime = "2023-11-17T18:15:42.630";
+        String dateTime = "2023-11-17T18:15:42.630+03:00";
         LocalDateTime expected = LocalDateTime.parse("2023-11-17T18:15:42");
         assertThat(parser.parse(dateTime)).isNotEqualTo(expected);
     }
