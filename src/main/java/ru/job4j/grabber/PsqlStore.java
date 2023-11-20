@@ -4,7 +4,6 @@ import ru.job4j.grabber.utils.HabrCareerDateTimeParser;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -32,7 +31,7 @@ public class PsqlStore implements Store {
         post.setTitle(rs.getString(2));
         post.setDescription(rs.getString(3));
         post.setLink(rs.getString(4));
-        post.setCreated(LocalDateTime.parse(rs.getString(5).replace(" ", "T")));
+        post.setCreated(rs.getTimestamp(5).toLocalDateTime());
         return post;
     }
 
