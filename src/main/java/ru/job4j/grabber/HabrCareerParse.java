@@ -6,7 +6,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import ru.job4j.grabber.utils.DateTimeParser;
-import ru.job4j.grabber.utils.HabrCareerDateTimeParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,11 +60,6 @@ public class HabrCareerParse implements Parse {
         post.setCreated(dateTimeParser.parse(vacancyDate));
         post.setDescription(description);
         return post;
-    }
-
-    public static void main(String[] args) {
-        HabrCareerParse hcp = new HabrCareerParse(new HabrCareerDateTimeParser());
-        hcp.list(SOURCE_LINK);
     }
 
     @Override
